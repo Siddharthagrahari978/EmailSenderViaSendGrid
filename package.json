@@ -1,0 +1,17 @@
+{
+  "name": "email-sender",
+  "version": "1.0.0",
+  "description": "This App helps you Send marketing/Transactional emails",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "author": "Siddharth Kumar",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "socket.io": "^4.0.1"
+  }
+}

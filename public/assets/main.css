@@ -1,0 +1,33 @@
+@import url("./all.min.css");
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+  
+/* MDB */
+@import url("./mdb.min.css");
+
+
+
+*{
+  /* color: rgba(255, 255, 255, 0.644)!important; */
+  border: none!important;
+}
+body { 
+  background: url('./background-image.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #36393F;
+  color: rgba(255, 255, 255, 0.644)!important;
+}
+@media (max-width:1000px){
+  body{ background-image:none;}
+}
+
+.form-control{background-color: #3C4046 !important; color: rgba(255, 255, 255, 0.658)!important;}
+.container{ background-color: #36393F!important; border-radius: 1rem;}
+textarea{resize: none;}
+input textarea{border: none!important;}
+
+label{color: rgba(255, 255, 255, 0.404)!important;}
