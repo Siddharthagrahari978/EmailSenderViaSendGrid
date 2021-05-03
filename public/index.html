@@ -63,6 +63,13 @@
 
 </body>
 
+<input type="hidden" name="tzOffset" id="tzOffset">
+<!-- ... -->
+<script>
+var tzOffset = new Date().getTimezoneOffset(),
+    tzInput = document.getElementById('tzOffset');
+tzInput.value = tzOffset*(-1);
+</script>
 
 <!-- MDB -->
 <script type="text/javascript" src="./assets/mbd.min.js"></script>

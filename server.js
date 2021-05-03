@@ -14,6 +14,19 @@ const io = socketio(server)
 app.use(express.static('./public'));
 
 
+function formatDateTimeForUser (date) {
+  var userTZ,     // user specified TZ like Europe/Berlin
+      userTZoffset, // tzOffset we got from login form
+      userDateFormat,  // user specified date format (or default)
+      userTimeFormat; // user specified time format (or default)
+
+  if (userTZ)
+      return moment(date).tz(userTZ).format(userDateFormat+' '+userTimeFormat+' zz');
+  else
+      return moment(date).utcOffset(userTZoffset).format(userDateFormat+' '+userTimeFormat+' ZZ');
+}
+
+
 //! Deploying app
 const PORT = process.env.PORT
 server.listen(PORT, () =>{
