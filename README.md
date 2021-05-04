@@ -1,8 +1,5 @@
 # EmailSenderViaSendGrid
-This is a NodeJS App which helps you send emails.
-
-
-This is an emailer app using Sendgrid api.
+This is a NodeJS App which helps you send emails using Sendgrid api.
 
 Features:
 1. Emails are sent through a secured relay and not any in-built language functions like pHp.
