@@ -19,10 +19,18 @@ server.listen(PORT, () =>{
   console.log(`Server is live at http://localhost:${PORT}`)
 })
 
-
+const from = {name: 'Demo User',email: `demo${process.env.SENDER_EMAIL_DOMAIN}`}
+console.log(from)
 
   io.on("connection", (socket) => {
-    socket.on('sendMail', msg =>{
+    socket.on('sendMail', (obj) =>{
+      let msg = {
+        to: obj.to,
+        from: from,
+        subject: obj.subject,
+        text: obj.text,
+        html:`<strong>${obj.text}</strong><br><br><br><br>This email is send using<a href='https://github.com/Siddharthagrahari978/EmailSenderViaSendGrid'>Email Sender App</a> click for git repository.`
+      }
       sgMail
       .send(msg)
       .then(() => {
@@ -30,6 +38,7 @@ server.listen(PORT, () =>{
       })
       .catch((error)=> {
         socket.emit('error', error)
+        console.log(msg)
       }) 
     })
   })

@@ -13,60 +13,29 @@
   <title>Email Sender</title>
 </head>
 <body>
-  <div class="container p-5 mt-5 col-lg-5">
+  <div class="container p-5 mt-5 col-lg-4">
     <div class="h1">Email Sender</div><br>
-
-    <form id='mailForm'>
-
-      <!-- From -->
-      <label class="mb-2"> Sender's Details</label>
-      <!--Sender's Name input -->
-      <div class="form-outline mb-3">
-        <input type="text" id="sender_name" class="form-control" required />
-        <label class="form-label" for="sender_name">Name</label>
-      </div>
-      <!--Sender's Email input -->
-      <div class="form-outline mb-4">
-        <input type="email" id="sender_email" class="form-control" required />
-        <label class="form-label" for="sender_email">Email Address</label>
-      </div>
-    
-
-      <!-- To -->
-      <label class="mb-2"> Rescipient's Details</label>
+    <form id='loginForm'>
+      <label class="mb-2">Login</label>
       <!--Rescipient's Email input -->
       <div class="form-outline mb-4">
-        <input type="email" id="rescipient_email" class="form-control" />
-        <label class="form-label" for="rescipient_email">Email Address</label>
+        <input type="text" id="username" class="form-control" required/>
+        <label class="form-label" for="username">User Name</label>
       </div>
 
-      <!-- subject -->
-      <div class="form-outline mb-3">
-        <input type="text" id="subject" class="form-control" required />
-        <label class="form-label" for="subject">Subject</label>
-      </div>
-      <!-- Message input -->
       <div class="form-outline mb-4">
-        <textarea class="form-control" id="message" rows="3"></textarea>
-        <label class="form-label" for="message">Message</label>
+        <input type="password" id="password" class="form-control" required />
+        <label class="form-label" for="password">Password</label>
       </div>
 
-
-      <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+      <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
     </form>
-
-    <div id="responce"></div>
+    <div id="loginresponce"></div>
   </div>
-  
-  
-
 </body>
 
 <!-- MDB -->
 <script type="text/javascript" src="./assets/mbd.min.js"></script>
-
-<script src="/socket.io/socket.io.js"></script>
 <script type="text/javascript" src="./assets/main.js"></script>
 
 </html>

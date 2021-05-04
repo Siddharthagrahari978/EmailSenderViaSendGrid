@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Link to CSS used -->
+  <link 
+  rel="stylesheet" 
+  href="../assets/main.css"
+  />
+  
+  <title>Email Sender</title>
+</head>
+<body>
+  <div class="container p-5 mt-5 col-lg-5">
+    <div class="h1">Email Sender</div><br>
+
+    <form id='mailForm'>
+      <!-- To -->
+      <label class="mb-2"> Rescipient's Details</label>
+      <!--Rescipient's Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="rescipient_email" class="form-control" />
+        <label class="form-label" for="rescipient_email">Email Address</label>
+      </div>
+
+      <!-- subject -->
+      <div class="form-outline mb-3">
+        <input type="text" id="subject" class="form-control" required />
+        <label class="form-label" for="subject">Subject</label>
+      </div>
+      <!-- Message input -->
+      <div class="form-outline mb-4">
+        <textarea class="form-control" id="message" rows="3"></textarea>
+        <label class="form-label" for="message">Message</label>
+      </div>
+
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+    </form>
+
+    <div id="responce"></div>
+  </div>
+  
+  
+
+</body>
+
+<!-- MDB -->
+<script type="text/javascript" src="../assets/mbd.min.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="../assets/main.js"></script>
+
+</html>

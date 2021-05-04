@@ -1,25 +1,42 @@
+//for index.html
+
+const loginForm = document.querySelector('#loginForm');
+
+
+let loginresponce = document.querySelector('#loginresponce');
+
+loginForm.addEventListener('submit', (event)=> {
+  event.preventDefault();
+  const username = document.querySelector('#username').value;
+  const password = document.querySelector('#password').value;
+  //alert(password)
+  if(username == 'demo'){
+    if(password == 'demo'){
+      location.href='/emailer'
+    }else{
+      loginresponce.innerHTML = `<div class='alert alert-danger' role='alert' data-mdb-color='danger' >Wrong Password</div>`
+    }
+  }else{
+    loginresponce.innerHTML = `<div class='alert alert-danger' role='alert' data-mdb-color='danger' >There is something wrong with you provided credentials.</div>`
+  }
+})
+
+//for emailer.html
 const socket = io();
 
 const mailForm = document.querySelector("#mailForm")
 const to = document.querySelector('#rescipient_email').value
-const from_email = document.querySelector('#sender_email').value
-const from_name = document.querySelector('#sender_name').value
 const subject = document.querySelector('#subject').value
+
+
 const text = document.querySelector('#message').value
-const from = {name: from_name,email: from_email}
 
 let responce = document.querySelector('#responce')
 
-let msg = {
-  to: to,
-  from: from,
-  subject: subject,
-  text: text,
-  html:`<strong>${text}</strong>`
-}
+
 mailForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  socket.emit('sendMail', msg);
+  socket.emit('sendMail', {to, subject, text});
 })
 socket.on('sent', msg =>{
   responce.innerHTML = `<div class='alert alert-success' role='alert' data-mdb-color='success' >${msg}</div>`
