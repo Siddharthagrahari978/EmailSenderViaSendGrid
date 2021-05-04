@@ -1,4 +1,4 @@
-# EmailSenderViaSendGrid
+# Email Sender Via SendGrid
 This is a NodeJS App which helps you send emails using Sendgrid api.
 
 Features:
