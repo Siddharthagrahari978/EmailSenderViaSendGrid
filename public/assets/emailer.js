@@ -13,7 +13,7 @@ let responce = document.querySelector('#responce')
 
 mailForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  socket.emit('sendMail', {to, subject, text});
+  socket.emit('sendMail', to, subject, text);
 })
 socket.on('sent', msg =>{
   responce.innerHTML = `<div class='alert alert-success' role='alert' data-mdb-color='success' >${msg}</div>`
