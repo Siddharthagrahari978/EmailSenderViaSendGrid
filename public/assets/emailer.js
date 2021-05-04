@@ -2,17 +2,16 @@
 const socket = io();
 
 const mailForm = document.querySelector("#mailForm")
-const to = document.querySelector('#rescipient_email').value
-const subject = document.querySelector('#subject').value
 
-
-const text = document.querySelector('#message').value
 
 let responce = document.querySelector('#responce')
 
 
 mailForm.addEventListener('submit', (event) => {
   event.preventDefault();
+  const to = document.querySelector('#rescipient_email').value
+  const subject = document.querySelector('#subject').value
+  const text = document.querySelector('#message').value
   socket.emit('sendMail', to, subject, text);
 })
 socket.on('sent', msg =>{
