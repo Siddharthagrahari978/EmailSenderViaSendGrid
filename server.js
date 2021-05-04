@@ -23,13 +23,13 @@ const from = {name: 'Demo User',email: `demo${process.env.SENDER_EMAIL_DOMAIN}`}
 console.log(from)
 
   io.on("connection", (socket) => {
-    socket.on('sendMail', ({to,subject,text}) =>{
+    socket.on('sendMail', obj =>{
       let msg = {
-        to: to,
+        to: obj.to,
         from: from,
-        subject: subject,
-        text: text,
-        html:`<strong>${text}</strong><br><br><br><br>This email is send using<a href='https://github.com/Siddharthagrahari978/EmailSenderViaSendGrid'>Email Sender App</a> click for git repository.`
+        subject: obj.subject,
+        text: obj.text,
+        html:`<strong>${obj.text}</strong><br><br><br><br>This email is send using<a href='https://github.com/Siddharthagrahari978/EmailSenderViaSendGrid'>Email Sender App</a> click for git repository.`
       }
       sgMail
       .send(msg)
